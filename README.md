@@ -1,4 +1,4 @@
-##Time
+#TIME
 
 ![Time]
-('time.png')
+('https://github.com/tw15egan/time/blob/master/time.png?raw=true')
