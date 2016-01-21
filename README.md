@@ -1,3 +1,3 @@
 #TIME
 
-![Time]('https://github.com/tw15egan/time/blob/master/time.png?raw=true')
+![Time]('https://raw.githubusercontent.com/tw15egan/time/master/time.png')
