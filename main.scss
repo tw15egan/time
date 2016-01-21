@@ -1,0 +1,126 @@
+$white: #fff;
+$black: #000;
+
+* {
+  transition: .5s;
+}
+
+body, html {
+  background-color: tomato;
+  height: 100%;
+  width: 100%;
+  margin: 0;
+}
+
+.container {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+// Clock outline
+.clock {
+  margin: 0 auto;
+  background: url('./clock.svg') no-repeat center;
+  background-size: 80%;
+  height: 20em;
+  position: relative;
+  width: 20em;
+  box-shadow: 3px 3px 10px 1px rgba(0,0,0,0.7);
+}
+
+// Creates center circle
+.clock::after {
+  background: $black;
+  border-radius: 50%;
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 15px;
+  height: 15px;
+  z-index: 10;
+}
+
+// Stacks container on top of the clock
+.minutes-container,
+.hours-container,
+.seconds-container {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+// Hour hand
+.hours {
+  background: $black;
+  height: 20%;
+  left: 48.75%;
+  position: absolute;
+  top: 30%;
+  transform-origin: 50% 100%;
+  width: 2.5%;
+}
+// Animation
+.hours-container {
+  animation: rotate 43200s infinite linear;
+}
+
+// Minute hand
+.minutes {
+  background: $black;
+  height: 40%;
+  left: 49%;
+  position: absolute;
+  top: 10%;
+  transform-origin: 50% 100%;
+  width: 2%;
+}
+// Animation
+.minutes-container {
+  animation: rotate 3600s infinite steps(60);
+}
+
+// Second hand
+.seconds {
+  background: $black;
+  height: 45%;
+  left: 49.5%;
+  position: absolute;
+  top: 14%;
+  transform-origin: 50% 80%;
+  width: 1%;
+  z-index: 12;
+}
+// Animation
+.seconds-container {
+  animation: rotate 60s infinite steps(60);
+}
+
+// Animations
+@keyframes rotate {
+  100% {
+    transform: rotateZ(360deg);
+  }
+}
+
+
+// Name
+.name {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  text-decoration: none;
+  color: #fff;
+  opacity: 0.7;
+  font-family: 'courier';
+  p {
+    padding: 1em;
+    margin: 0;
+  }
+}
