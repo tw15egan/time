@@ -1,4 +1,4 @@
 ##Time
 
 ![Time]
-('./img/time.png')
+('time.png')
